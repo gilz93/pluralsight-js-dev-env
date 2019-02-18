@@ -1,6 +1,6 @@
 import './index.css';
 
-import {getUsers} from './api/userApi';
+import {getUsers, deleteUser} from './api/userApi';
 
 // Populate table of users via API call.
 getUsers().then(result => {
@@ -26,7 +26,7 @@ getUsers().then(result => {
     link.onclick = function(event) {
       const element = event.target;
       event.preventDefault();
-      //deleteUser(element.attributes["data-id"].value);
+      deleteUser(element.attributes["data-id"].value);
       const row = element.parentNode.parentNode;
       row.parentNode.removeChild(row);
     };
