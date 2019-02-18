@@ -10,11 +10,11 @@ describe('Our first test', () => {
 
 const { JSDOM } = jsdom;
 describe('index.html', () => { // eslint-disable-line
-    it('should say hello' , (done) => { // eslint-disable-line
+    it('should say h1 that says Users' , (done) => { // eslint-disable-line
       const options = { }
       JSDOM.fromFile('./src/index.html', options).then(dom => {
         const h1 = dom.window.document.getElementsByTagName('h1')[0]
-        expect(h1.innerHTML).to.equal('Hello World!')
+        expect(h1.innerHTML).to.equal("Users")
         done();
       }).catch(done)
     })
